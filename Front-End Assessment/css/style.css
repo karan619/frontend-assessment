@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/*Main Page*/
+.nav-bar {
+  background-color: #00213a;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.nav-menu {
+  position: relative;
+  top: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  left: 60px;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background-color: #eee;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #000;
+}
+
+.nav-link {
+  position: relative;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28.8px;
+  transition: 1s;
+
+  font-family: "Bebas Neue";
+  float: left;
+  margin-right: 30px;
+  text-decoration: none !important;
+}
+
+.nav-link:hover {
+  color: rgb(24, 177, 113);
+}
+
+.icon {
+  display: inline;
+  padding: 15px;
+  position: relative;
+}
+
+.social-media {
+  overflow-y: hidden;
+}
+
+.social-media i {
+  color: #ffffff;
+  transition: 1s;
+  padding: 10px;
+}
+
+.social-media i:hover {
+  cursor: pointer;
+  color: rgb(24, 177, 113);
+}
+.badge {
+  background-color: red;
+  position: absolute;
+  border-radius: 10px;
+  right: 10px;
+  bottom: 35px;
+}
+/*Banner*/
+.banner-wrapper {
+  height: 50px;
+  overflow-y: hidden;
+}
+
+.banner {
+  font-family: "Roboto";
+  text-align: center;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 16.41px;
+  top: 20%;
+  padding: 15px;
+}
+
+/*Slider*/
+.slider-wrapper {
+  width: 100%;
+  overflow-y: hidden;
+}
+
+.slides-container {
+  height: 650px;
+  transition: 900ms cubic-bezier(0.48, 0.15, 0.18, 1);
+  position: relative;
+  overflow-y: hidden;
+}
+
+.slide-image {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow-y: hidden;
+}
+
+.slide-image img {
+  width: 100%;
+  height: 650px;
+  overflow-y: hidden;
+  object-fit: cover;
+}
+.next-btn,
+.prev-btn {
+  background: #eee;
+  padding: 16px;
+  position: absolute;
+  top: 450px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+
+/* Navigation Dots */
+
+.navigation-dots {
+  position: relative;
+  display: flex;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  margin: 16px 0;
+  bottom: 50px;
+}
+
+.single-dot {
+  background: transparent;
+  height: 16px;
+  width: 16px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  margin: 0 8px;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.single-dot.active {
+  background: #eee;
+}
+
+/* Fading animation */
+.effect {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*second banner*/
+
+.inner-banner-wrapper {
+  display: flex;
+  width: 1111px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.inner-banner {
+  position: relative;
+  top: 80px;
+  font-family: "Roboto";
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 56px;
+  text-align: center;
+}
+
+/*Card*/
+.category-card-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  justify-content: center;
+  margin: 10px;
+}
+
+.card {
+  flex: 1;
+  margin: 3px;
+  position: relative;
+}
+
+.card-image {
+  height: 80vh;
+}
+
+.category-info {
+  position: absolute;
+  display: flex;
+  height: 98%;
+  width: 95%;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.category-button {
+  border: none;
+  padding: 10px;
+  background-color: white;
+  width: 200px;
+  height: 60px;
+  font-family: "Bebas Neue";
+  font-size: 30px;
+  line-height: 24px;
+}
+
+/*Media query*/
+
+@media only screen and (max-width: 1024px) {
+  .logo {
+    position: relative;
+    height: 27px;
+    bottom: 0px;
+  }
+
+  .nav-link {
+    font-size: 20px;
+  }
+
+  .inner-banner-wrapper {
+    width: 450px;
+    height: 500px;
+    overflow: hidden;
+  }
+
+  .inner-banner {
+    font-size: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .hamburger {
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -120%;
+    top: 120px;
+    gap: 0;
+    flex-direction: column;
+    background-color: #00213a;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    z-index: 100;
+    overflow-y: hidden;
+    height: 650px;
+    padding: 40px;
+    align-items: center;
+  }
+
+  .nav-item {
+    overflow-y: hidden;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+  .slider-wrapper {
+    height: 600px;
+  }
+
+  .next-btn,
+  .prev-btn {
+    display: none;
+  }
+
+  .category-card-wrapper {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 700px;
+    height: 200px;
+  }
+
+  .category-info {
+    position: absolute;
+    bottom: 0px;
+    left: 35px;
+  }
+
+  .navigation-dots {
+    bottom: 110px;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .logo {
+    height: 24px;
+  }
+
+  .inner-banner-wrapper {
+    width: 350px;
+    margin-bottom: 30px;
+  }
+
+  .inner-banner {
+    font-size: 20px;
+  }
+
+  .card {
+    width: 400px;
+    height: 200px;
+  }
+}
