@@ -4,22 +4,29 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
+html,
 body {
+  max-width: 100%;
   overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 /*Main Page*/
 .nav-bar {
   background-color: #00213a;
-  height: 150px;
+  height: 80px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 24px;
+}
+
+.logo {
+  width: 180px;
+  height: 39.22px;
+  margin-left: 24px;
 }
 
 .nav-menu {
@@ -27,9 +34,10 @@ body {
   top: 5px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   height: 100px;
   left: 60px;
+  align-items: center;
+  text-align: center;
 }
 
 .hamburger {
@@ -42,7 +50,7 @@ body {
   display: block;
   width: 25px;
   height: 3px;
-  margin: 5px auto;
+  margin: 4px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: #000;
@@ -57,7 +65,7 @@ body {
   transition: 1s;
 
   font-family: "Bebas Neue";
-  float: left;
+
   margin-right: 30px;
   text-decoration: none !important;
 }
@@ -72,14 +80,9 @@ body {
   position: relative;
 }
 
-.social-media {
-  overflow-y: hidden;
-}
-
 .social-media i {
   color: #ffffff;
   transition: 1s;
-  padding: 10px;
 }
 
 .social-media i:hover {
@@ -91,29 +94,27 @@ body {
   position: absolute;
   border-radius: 10px;
   right: 10px;
-  bottom: 35px;
+  bottom: 27px;
+  font-size: 12px;
 }
 /*Banner*/
 .banner-wrapper {
   height: 50px;
-  overflow-y: hidden;
+  background: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.11);
 }
 
 .banner {
   font-family: "Roboto";
   text-align: center;
-  font-weight: 800;
+  font-weight: 500;
   font-size: 14px;
-  line-height: 16.41px;
-  top: 20%;
+  line-height: 16px;
   padding: 15px;
+  color: #040707;
 }
 
 /*Slider*/
-.slider-wrapper {
-  width: 100%;
-  overflow-y: hidden;
-}
 
 .slides-container {
   height: 650px;
@@ -125,8 +126,6 @@ body {
 .slide-image {
   height: 100%;
   width: 100%;
-  position: absolute;
-  overflow-y: hidden;
 }
 
 .slide-image img {
@@ -137,7 +136,7 @@ body {
 }
 .next-btn,
 .prev-btn {
-  background: #eee;
+  background: rgba(255, 255, 255, 0.8);
   padding: 16px;
   position: absolute;
   top: 450px;
@@ -162,7 +161,7 @@ body {
 .navigation-dots {
   position: relative;
   display: flex;
-  height: 32px;
+
   align-items: center;
   justify-content: center;
   margin: 16px 0;
@@ -171,8 +170,8 @@ body {
 
 .single-dot {
   background: transparent;
-  height: 16px;
-  width: 16px;
+  height: 14px;
+  width: 14px;
   border: 2px solid #ffffff;
   border-radius: 50%;
   margin: 0 8px;
@@ -205,17 +204,17 @@ body {
   display: flex;
   width: 1111px;
   height: 400px;
-  overflow: hidden;
+  text-align: center;
+  justify-content: center;
 }
 
 .inner-banner {
   position: relative;
   top: 80px;
   font-family: "Roboto";
-  font-weight: 800;
+  font-weight: 500;
   font-size: 36px;
   line-height: 56px;
-  text-align: center;
 }
 
 /*Card*/
@@ -234,7 +233,7 @@ body {
 }
 
 .card-image {
-  height: 80vh;
+  height: 586px;
 }
 
 .category-info {
@@ -254,15 +253,17 @@ body {
   font-family: "Bebas Neue";
   font-size: 30px;
   line-height: 24px;
+  font-weight: 400;
 }
 
 /*Media query*/
 
 @media only screen and (max-width: 1024px) {
   .logo {
-    position: relative;
-    height: 27px;
+    width: 120px;
+    height: 26px;
     bottom: 0px;
+    padding-right: 25px;
   }
 
   .nav-link {
@@ -282,6 +283,9 @@ body {
 }
 
 @media only screen and (max-width: 991px) {
+  body {
+    overflow-x: hidden;
+  }
   .hamburger {
     display: block;
   }
@@ -296,6 +300,15 @@ body {
     transform: translateY(-8px) rotate(-45deg);
   }
 
+  .banner-wrapper {
+    height: 100px;
+    background: #ffffff;
+  }
+
+  .bar {
+    margin: 2px auto;
+  }
+
   .nav-menu {
     position: fixed;
     left: -120%;
@@ -303,7 +316,7 @@ body {
     gap: 0;
     flex-direction: column;
     background-color: #00213a;
-    width: 100%;
+    width: 450px;
     text-align: center;
     transition: 0.3s;
     z-index: 100;
@@ -320,8 +333,8 @@ body {
   .nav-menu.active {
     left: 0;
   }
-  .slider-wrapper {
-    height: 600px;
+  .slides-container {
+    height: 290px;
   }
 
   .next-btn,
@@ -329,12 +342,19 @@ body {
     display: none;
   }
 
+  .icon {
+    position: relative;
+    left: 10px;
+    font-size: 18px;
+  }
+
   .category-card-wrapper {
     flex-direction: column;
   }
 
-  .card {
-    width: 700px;
+  .card,
+  .card-image {
+    width: 414px;
     height: 200px;
   }
 
@@ -344,28 +364,37 @@ body {
     left: 35px;
   }
 
-  .navigation-dots {
-    bottom: 110px;
-  }
-}
-
-/* Extra Small Devices, Phones */
-@media only screen and (max-width: 480px) {
-  .logo {
-    height: 24px;
-  }
-
   .inner-banner-wrapper {
-    width: 350px;
-    margin-bottom: 30px;
+    position: relative;
+    bottom: 30px;
+    width: 340px;
+    height: 250px;
+    overflow: hidden;
   }
 
   .inner-banner {
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 30px;
+    padding-bottom: 30px;
   }
+  .category-button {
+    border: none;
+    padding: 10px;
+    background-color: white;
+    font-style: normal;
+    width: 131px;
+    height: 50px;
+    font-family: "Bebas Neue";
+    font-size: 28px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+}
 
-  .card {
-    width: 400px;
+@media only screen and (max-width: 390px) {
+  .card,
+  .card-image {
+    width: 370px;
     height: 200px;
   }
 }
